@@ -63,3 +63,8 @@ a:hover {
   top: 610px;
   left: 10px;
 }
+
+.description{
+  position: absolute;
+  top: 610px;
+}
