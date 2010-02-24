@@ -70,3 +70,18 @@ a:hover {
   top: 610px;
   z-index: 1;
 }
+
+#welcome-screen{
+  background: url("images/startscreen.png");
+  width: 760px;
+  height: 600px;
+  margin-left: 20px;
+  position: absolute;
+  z-index: 100;
+  padding-top: 250px;
+  text-align: center;
+  color: white;
+}
+#start-button{
+  cursor: pointer;
+}
