@@ -16,7 +16,7 @@
  */
 
 var Animation = $.gameQuery.Animation;
-var keycodes = $.gameQueryExt.keycodes;
+var keycodes = $.gameQuery.keycodes;
 var keyTracker;
 
 var game = {
@@ -36,7 +36,7 @@ var game = {
 };
 var animations = {
 };
-game.objects = new $.gameQueryExt.QuadTree(game.worldSize, game.worldSize);
+game.objects = new $.gameQuery.QuadTree(game.worldSize, game.worldSize);
 game.addObject = function(obj, x, y){
   if (x !== undefined && x !== undefined){
     game.objects.add(obj, x, y);
@@ -76,7 +76,7 @@ function visibleObjects(){
 }
 
 function gameLoop(){
-  var timeElapsed = $.gameQueryExt.getTimeElapsed();
+  var timeElapsed = $.gameQuery.getTimeElapsed();
 
   if (game.state == "playing"){
     game.farmer.update(timeElapsed / JarmView.frameRate);

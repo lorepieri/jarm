@@ -94,7 +94,7 @@ Farmer.prototype.move = function(dx, dy){
   $.each(visibleObjects(), function(i, obj){
     if (hit !== null) { return; }
 
-    if ($.gameQueryExt.rectOverlap(newPos.x, newPos.y, farmer.elem.width(), farmer.elem.height(),
+    if ($.gameQuery.rectOverlap(newPos.x, newPos.y, farmer.elem.width(), farmer.elem.height(),
         obj.position().left, obj.position().top, obj.width(), obj.height())){
       hit = obj;
     }
@@ -145,7 +145,7 @@ Farmer.prototype.update = function(dt){
   }
   if (this.target !== undefined){
     var norm = this.vel.norm();
-    if ($.gameQueryExt.rectOverlap(this.pos.x, this.pos.y, this.elem.width(), this.elem.height(),
+    if ($.gameQuery.rectOverlap(this.pos.x, this.pos.y, this.elem.width(), this.elem.height(),
         this.target.position().left - norm, this.target.position().top - norm, this.target.width() + norm * 2,
         this.target.height() + norm * 2)){
       this.arrived();

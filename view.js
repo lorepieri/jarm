@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 function JarmView(){
-  $.gameQueryExt.LockedView.call(this, game.farmer.elem, $.playground(), game.background, {
+  $.gameQuery.LockedView.call(this, game.farmer.elem, $.playground(), game.background, {
     width: game.worldSize,
     height: game.worldSize,
     imageURL: "images/grass.png"
@@ -31,7 +31,7 @@ function JarmView(){
 
   this.drawInventory();
 }
-JarmView.prototype = $.gameQueryExt.LockedView.prototype;
+JarmView.prototype = $.gameQuery.LockedView.prototype;
 
 JarmView.frameRate = 1000 / 50;
 
