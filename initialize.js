@@ -72,8 +72,18 @@ function loadObjects(){
     var plot = $("#plot" + i);
     plot.contains = null;
     plot.isPlot = true;
+    plot.removePlant = function(){
+      this.contains.removeSprite();
+      this.contains = null;
+    };
     game.addObject(plot, 260 + i * 40, 350);
   }
+
+  animations.cop = {
+    anim: new Animation({imageURL: "images/cop.png"}),
+    width: 17,
+    height: 31
+  };
 }
 
 function loadShop(){

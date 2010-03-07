@@ -94,8 +94,7 @@ PlantingDialog.prototype.pick = function(which){
   var plot = game.plots[which];
 
   game.farmer.addItem(plot.contains);
-  plot.contains.removeSprite();
-  plot.contains = null;
+  plot.removePlant();
   view.drawInventory();
   this.close();
 }

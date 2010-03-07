@@ -192,3 +192,7 @@ Farmer.prototype.collided = function(collision){
   this.targetPoint = undefined;
   this.target = undefined;
 }
+
+Farmer.prototype.addMoney = function(amount){
+  this.money += amount;
+}

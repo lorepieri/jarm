@@ -19,5 +19,8 @@ function Shop(){
 }
 
 Shop.prototype.sell = function(obj){
-  game.farmer.money += obj.value;
+  if (obj.illegal){
+    Events.allowCop = true;
+  }
+  game.farmer.addMoney(obj.value);
 }

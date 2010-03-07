@@ -27,6 +27,7 @@ var game = {
   farmer: null,
   plots: {},
   objectsHash: {},
+  thinkers: [],
 
   // config params
   worldSize: 2000,
@@ -38,7 +39,7 @@ var animations = {
 };
 game.objects = new $.gameQuery.QuadTree(game.worldSize, game.worldSize);
 game.addObject = function(obj, x, y){
-  if (x !== undefined && x !== undefined){
+  if (x !== undefined && y !== undefined){
     game.objects.add(obj, x, y);
   }
 
@@ -48,6 +49,12 @@ game.addObject = function(obj, x, y){
     }
     game.objectsHash[obj.attr("id")] = obj;
   }
+}
+game.addThinker = function(thinker, x, y){
+  if (x !== undefined && y !== undefined){
+    game.objects.add(thinker, x, y);
+  }
+  game.thinkers.push(thinker);
 }
 var view;
 
@@ -92,6 +99,12 @@ function gameLoop(){
       }
     }
   }
+
+  $.each(game.thinkers, function(i, obj){
+    obj.think();
+  });
+
+  Events.randomEvent();
 
   view.frame(timeElapsed);
   return false;

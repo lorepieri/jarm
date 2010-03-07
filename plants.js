@@ -37,6 +37,8 @@ function Plant(type, name, animation){
     this.type = type;
     this.name = name;
 
+    this.illegal = false;
+
     this.growth = 0;
     this.growTime = 1000;
     this.animation = animation;
@@ -100,6 +102,7 @@ function Marijuana(){
     offsetY: -2
   });
   this.value = 100;
+  this.illegal = true;
 }
 Marijuana.prototype = Plant.prototype;
 
