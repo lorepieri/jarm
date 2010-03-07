@@ -52,7 +52,7 @@ game.addObject = function(obj, x, y){
 }
 game.addThinker = function(thinker, x, y){
   if (x !== undefined && y !== undefined){
-    game.objects.add(thinker, x, y);
+    game.objects.add(thinker.elem, x, y);
   }
   game.thinkers.push(thinker);
 }
