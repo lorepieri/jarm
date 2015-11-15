@@ -168,7 +168,7 @@ function onKeyPress(ev){
 
 function onClick(ev){
   if (game.state == "playing"){
-    if (ev.originalTarget.tagName.toLowerCase() != "a"){
+    if (ev.target.tagName.toLowerCase() != "a"){
       // When you click a dialog item in Firefox it 
       // sends this click event, so we need to make
       // sure we didn't just hit a link
@@ -176,10 +176,10 @@ function onClick(ev){
       var pg = game.playground.position();
       var pos, obj;
 
-      if (ev.originalTarget.id.match(/^plant\d+/)){
-        obj = game.objectsHash[ev.originalTarget.id].plant.plot;
-      }else if (ev.originalTarget.id.match(/^(plot|rock|shop)/)){
-        obj = game.objectsHash[ev.originalTarget.id];
+      if (ev.target.id.match(/^plant\d+/)){
+        obj = game.objectsHash[ev.target.id].plant.plot;
+      }else if (ev.target.id.match(/^(plot|rock|shop)/)){
+        obj = game.objectsHash[ev.target.id];
       }else if (ev.clientX > pg.left && ev.clientX < pg.left + game.playground.width() &&
           ev.clientY > pg.top && ev.clientY < pg.top + game.playground.height()){
         pos = toWorldCoords(ev.clientX, ev.clientY);
@@ -187,7 +187,7 @@ function onClick(ev){
 
       if (obj !== undefined || pos !== undefined){
         if (obj !== undefined){
-          pos = $(ev.originalTarget).position();
+          pos = $(ev.target).position();
           // no need to convert to world coords since these points will already be in world coords
           pos = new Vector(pos.left, pos.top);
         }
